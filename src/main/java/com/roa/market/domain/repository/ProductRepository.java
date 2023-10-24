@@ -7,10 +7,10 @@ import java.util.List;
 import java.util.Optional;
 
 public interface ProductRepository {
-    List<Producto> getAll();
-    Optional<List<Producto>> getByCategory(int categoryId);
-    Optional<List<Producto>> getScarseProducts(int quantity);
-    Optional<Producto> getProduct(int productId);
+    List<Product> getAll();
+    Optional<List<Product>> getByCategory(int categoryId);
+    Optional<List<Product>> getScarseProducts(int quantity);
+    Optional<Product> getProduct(int productId);
     Product save(Product product);
     void delete(int productId);
 }

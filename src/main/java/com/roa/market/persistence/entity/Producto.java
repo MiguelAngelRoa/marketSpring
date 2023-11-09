@@ -7,16 +7,20 @@ import java.util.List;
 @Entity
 @Table(name = "productos")
 public class Producto {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id_producto")
+    @Column(name = "id_producto")
     private Integer idProducto;
 
-    private String nombre; // Se llama exactamente igual que en base de datos por eso no se utiliza @Column
+    private String nombre;
+
     @Column(name = "id_categoria")
     private Integer idCategoria;
+
     @Column(name = "codigo_barras")
     private String codigoBarras;
+
     @Column(name = "precio_venta")
     private Double precioVenta;
 
@@ -28,15 +32,6 @@ public class Producto {
     @ManyToOne
     @JoinColumn(name = "id_categoria", insertable = false, updatable = false)
     private Categoria categoria;
-
-    // Set & Get
-    public String getCodigoBarras() {
-        return codigoBarras;
-    }
-
-    public void setCodigoBarras(String codigoBarras) {
-        this.codigoBarras = codigoBarras;
-    }
 
     public Integer getIdProducto() {
         return idProducto;
@@ -62,6 +57,14 @@ public class Producto {
         this.idCategoria = idCategoria;
     }
 
+    public String getCodigoBarras() {
+        return codigoBarras;
+    }
+
+    public void setCodigoBarras(String codigoBarras) {
+        this.codigoBarras = codigoBarras;
+    }
+
     public Double getPrecioVenta() {
         return precioVenta;
     }
@@ -84,5 +87,13 @@ public class Producto {
 
     public void setEstado(Boolean estado) {
         this.estado = estado;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 }

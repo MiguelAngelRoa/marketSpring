@@ -7,31 +7,26 @@ import java.util.List;
 @Entity
 @Table(name="clientes")
 public class Cliente {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_cliente")
-    private Integer idCliente;
-
+    private String id;
     private String nombre;
-
     private String apellidos;
-    @Column(columnDefinition = "numeric", name = "celular")
-    private String celular;
-
+    private Long celular;
     private String direccion;
+
     @Column(name="correo_electronico")
     private String correoElectronico;
 
     @OneToMany(mappedBy = "cliente")
     private List<Compra> compras;
 
-    // Set & Get
-    public Integer getIdCliente() {
-        return idCliente;
+    public String getId() {
+        return id;
     }
 
-    public void setIdCliente(Integer idCliente) {
-        this.idCliente = idCliente;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getNombre() {
@@ -50,11 +45,11 @@ public class Cliente {
         this.apellidos = apellidos;
     }
 
-    public String getCelular() {
+    public Long getCelular() {
         return celular;
     }
 
-    public void setCelular(String celular) {
+    public void setCelular(Long celular) {
         this.celular = celular;
     }
 
@@ -72,5 +67,13 @@ public class Cliente {
 
     public void setCorreoElectronico(String correoElectronico) {
         this.correoElectronico = correoElectronico;
+    }
+
+    public List<Compra> getCompras() {
+        return compras;
+    }
+
+    public void setCompras(List<Compra> compras) {
+        this.compras = compras;
     }
 }

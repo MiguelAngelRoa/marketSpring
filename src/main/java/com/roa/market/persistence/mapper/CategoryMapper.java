@@ -1,6 +1,7 @@
 package com.roa.market.persistence.mapper;
 
 import com.roa.market.domain.Category;
+import com.roa.market.persistence.entity.Categoria;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -12,10 +13,10 @@ public interface CategoryMapper {
             @Mapping(source = "idCategoria", target = "categoryId"),
             @Mapping(source = "descripcion", target = "category"),
             @Mapping(source = "estado", target = "active"),
-
     })
-    Category toCategory(Category categoria);
+    Category toCategory(Categoria categoria);
+
     @InheritInverseConfiguration
     @Mapping(target = "productos", ignore = true)
-    Category toCategoria(Category category);
+    Categoria toCategoria(Category category);
 }

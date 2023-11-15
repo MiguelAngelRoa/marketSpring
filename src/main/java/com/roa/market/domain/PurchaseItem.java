@@ -3,10 +3,9 @@ package com.roa.market.domain;
 public class PurchaseItem {
     private int productId;
     private int quantity;
-    private int total;
+    private double total;
     private boolean active;
 
-    // Set y Get
     public int getProductId() {
         return productId;
     }
@@ -23,11 +22,11 @@ public class PurchaseItem {
         this.quantity = quantity;
     }
 
-    public int getTotal() {
+    public double getTotal() {
         return total;
     }
 
-    public void setTotal(int total) {
+    public void setTotal(double total) {
         this.total = total;
     }
 

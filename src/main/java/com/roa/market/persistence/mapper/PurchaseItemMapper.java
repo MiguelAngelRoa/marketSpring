@@ -12,7 +12,7 @@ public interface PurchaseItemMapper {
     @Mappings({
         @Mapping(source = "id.idProducto", target = "productId"),
         @Mapping(source = "cantidad", target = "quantity"),
-        // como total es el mismo nombre en ambas clases, se omite
+        @Mapping(source = "total", target = "total"),
         @Mapping(source = "estado", target = "active")
     })
     PurchaseItem toPurchaseItem(ComprasProducto producto);

@@ -4,7 +4,6 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public class Purchase {
-
     private int purchaseId;
     private String clientId;
     private LocalDateTime date;
@@ -13,7 +12,6 @@ public class Purchase {
     private String state;
     private List<PurchaseItem> items;
 
-    //Set & Get
     public int getPurchaseId() {
         return purchaseId;
     }
@@ -62,11 +60,11 @@ public class Purchase {
         this.state = state;
     }
 
-    public List<PurchaseItem> getItem() {
+    public List<PurchaseItem> getItems() {
         return items;
     }
 
-    public void setItem(List<PurchaseItem> items) {
+    public void setItems(List<PurchaseItem> items) {
         this.items = items;
     }
 }

@@ -2,7 +2,6 @@ package com.roa.market.web.controller;
 
 import com.roa.market.domain.Product;
 import com.roa.market.domain.service.ProductService;
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,6 +21,7 @@ public class ProductController {
         return new ResponseEntity<>(productService.getAll(), HttpStatus.OK);
     }
 
+    @GetMapping("/{id}")
     public ResponseEntity<Product> getProduct(
         @PathVariable("id") int productId
     ) {

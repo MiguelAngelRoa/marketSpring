@@ -2,11 +2,14 @@ package com.roa.market.domain.repository;
 
 import com.roa.market.domain.Product;
 import com.roa.market.persistence.entity.Producto;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 
-public interface ProductRepository {
+@Repository
+public interface ProductRepository{
     List<Product> getAll();
     Optional<List<Product>> getByCategory(int categoryId);
     Optional<List<Product>> getScarseProducts(int quantity);

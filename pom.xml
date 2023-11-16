@@ -9,7 +9,7 @@
 	</parent>
 	<groupId>com.roa</groupId>
 	<artifactId>market</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0</version>
 	<name>market</name>
 	<description>Proyecto de prueba para api de mercado</description>
 	<properties>
